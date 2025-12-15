@@ -1,0 +1,1 @@
+可以看到在GMDM中Local encoder (SphrerNet, EGNN)有两种实现方式EGNN和Spherenet，其中EGNN就是GMDM的原始版本，而为了引进键角和二面角信息，我针对encoder_local使用Spherenet对EGNN做了替换。现在我想对PMDM的encoder_local做出同样的替换。你可以参考GMDM中的替换方式，来对PMDM中的encoder_local做出替换修改，因为PMDM中引入了蛋白质的信息，所以修改时应该会有额外的参数要考虑

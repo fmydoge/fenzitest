@@ -1,0 +1,5 @@
+python3 -m torch.distributed.launch --nproc_per_node 2  train_ddp.py --config './configs/geom_full.yml' --use_mixed_precision=True
+python3 -m torch.distributed.launch --nproc_per_node 2  train_ddp.py --config './configs/qm9_full_epoch.yml' --use_mixed_precision=True
+python3 -m torch.distributed.launch --nproc_per_node 2  train_ddp.py --config /home/FMY/GMDM-main/logs/geom_full_ddpm_2losses_2025_04_26__11_09_50  --resume_iter 17 --use_mixed_precision=True
+python3 test_eval.py --ckpt /home/FMY/GMDM-combine-MolAir/Mol-AIR-main/data/drd2+qed+sa/gmdm-pretrained.pt --sampling_type generalized --w_global_pos 1 --w_global_node 1 --w_local_pos 4 --w_local_node 5
+python3 test_eval.py --ckpt /home/FMY/GMDM-main/logs/geom_full_ddpm_2losses_2025_04_26__11_09_50/checkpoints/17.pt --sampling_type generalized --w_global_pos 1 --w_global_node 1 --w_local_pos 4 --w_local_node 5
